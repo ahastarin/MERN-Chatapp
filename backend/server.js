@@ -17,8 +17,6 @@ connectDB();
 
 // SETUP ENV
 dotenv.config();
-const __dirname1 = path.resolve()
-
 // setting cors
 var corsOptions = {
     origin: "*"
@@ -35,24 +33,6 @@ app.use(express.json());
 app.use('/api/user', userRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/message', messageRoutes);
-
-// -------------------------------DEPLOYMENT-----------------------------
-
-
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname1, '/frontend/dist')))
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname1, "frontend", "dist", "index.html"))
-    })
-} else {
-    app.get('/', (req, res) => {
-        res.send("API running succesfully")
-    })
-}
-
-// -------------------------------DEPLOYMENT-----------------------------
 
 
 app.get('/', (req, res) => {
