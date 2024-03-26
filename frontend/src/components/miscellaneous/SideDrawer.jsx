@@ -69,7 +69,7 @@ function SideDrawer() {
                 }
             }
 
-            const { data } = await axios.get(`/api/user?search=${search}`, config)
+            const { data } = await axios.get(`https://chatapp-api-taupe.vercel.app/api/user?search=${search}`, config)
 
             setLoading(false);
             setSearchResult(data);
@@ -95,7 +95,7 @@ function SideDrawer() {
                 }
             }
 
-            const { data } = await axios.post("/api/chat", { userId }, config)
+            const { data } = await axios.post("https://chatapp-api-taupe.vercel.app/api/chat", { userId }, config)
 
 
             if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats])

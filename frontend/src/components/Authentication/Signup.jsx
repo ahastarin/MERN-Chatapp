@@ -96,7 +96,7 @@ function Signup() {
             }
 
             const { data } = await axios.post(
-                "/api/user",
+                "https://chatapp-api-taupe.vercel.app/api/user",
                 { name, email, password, pic },
                 config
             )

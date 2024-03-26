@@ -52,7 +52,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
             setLoading(true)
 
             const { data } = await axios.get(
-                `/api/message/${selectedChat?._id}`,
+                `https://chatapp-api-taupe.vercel.app/api/message/${selectedChat?._id}`,
                 config
             )
 
@@ -88,7 +88,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                 setNewMessages("");
 
                 const { data } = await axios.post(
-                    "/api/message",
+                    "https://chatapp-api-taupe.vercel.app/api/message",
                     {
                         content: newMessages,
                         chatId: selectedChat?._id

@@ -52,7 +52,7 @@ const UpdateGroupModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                 },
             };
             const { data } = await axios.put(
-                `/api/chat/groupRemove`,
+                `https://chatapp-api-taupe.vercel.app/api/chat/groupRemove`,
                 {
                     chatId: selectedChat?._id,
                     userId: user1?._id,
@@ -114,7 +114,7 @@ const UpdateGroupModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                 }
             }
 
-            const { data } = await axios.put('/api/chat/groupAdd', {
+            const { data } = await axios.put('https://chatapp-api-taupe.vercel.app/api/chat/groupAdd', {
                 chatId: selectedChat._id,
                 userId: user1._id
             }, config)
@@ -147,7 +147,7 @@ const UpdateGroupModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                 }
             }
 
-            const { data } = await axios.put('/api/chat/rename', {
+            const { data } = await axios.put('https://chatapp-api-taupe.vercel.app/api/chat/rename', {
                 chatId: selectedChat._id,
                 chatName: groupChatName
             }, config)
@@ -183,7 +183,7 @@ const UpdateGroupModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                 }
             }
 
-            const { data } = await axios(`/api/user?search=${search}`, config);
+            const { data } = await axios(`https://chatapp-api-taupe.vercel.app/api/user?search=${search}`, config);
             setLoading(false)
             setSearchResult(data)
         } catch (error) {

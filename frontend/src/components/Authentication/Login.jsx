@@ -41,7 +41,7 @@ function Login() {
 
 
             const { data } = await axios.post(
-                "/api/user/login",
+                "https://chatapp-api-taupe.vercel.app/api/user/login",
                 { email, password },
                 config
             )

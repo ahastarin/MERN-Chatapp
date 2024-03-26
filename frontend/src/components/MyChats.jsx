@@ -20,7 +20,7 @@ function MyChats({ fetchAgain }) {
                 }
             }
 
-            const { data } = await axios.get(`/api/chat`, config)
+            const { data } = await axios.get(`https://chatapp-api-taupe.vercel.app/api/chat`, config)
             await setChats(data)
         } catch (error) {
             if (user) {
